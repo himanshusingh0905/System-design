@@ -22,36 +22,37 @@
 6. **Proxy Server**: Acts as a gateway between you and the internet.
  
 
-### 1.2 Analogy: Running a Pizza Delivery Service
-* **Web Server**: The menu on your website — serves static pages and accepts orders.
-* **Application Server**: The chefs preparing the pizzas (business logic).
-* **Database Server**: The pantry storing ingredients (user data and inventory).
-
+### 1.2 Analogy:
+#### Example : Real-World Example: A Pizza Ordering App
+* **Web Server (Waiter):** Displays the menu and sends the user’s pizza order to the kitchen. [Request of particular web-page]
+* **Application Server (Chef):**
+    * Processes the order (checks inventory, applies discounts).
+    * Contacts the database to fetch details like crust types and toppings.
+    * Prepares the final response (e.g., a confirmation of the order).
+* **Database (Pantry):** Stores the ingredients, orders, and user preferences.
 
 
  ### 1.3 How This Works in Action:
-Let’s say a user visits an e-commerce site and asks for details about a product. Here’s how it happens:
+#### Example: Let’s say a user visits an e-commerce site and asks for details about a product.
 
-Client Request:
+**[Client-request] -> [Web-server] -> [Application-server] -> [Database-server] -> [send-response]**
 
-The user’s browser sends a request to the web server to get product details.
-Web Server:
+1. **Client Request:** The user’s browser sends a request to the web server to get product details.
 
-The web server receives the request and forwards it to the application server (since the web server handles only basic requests like serving static files, not business logic).
-Application Server:
+2. **Web Server:** The web server receives the request and forwards it to the application server (since the web server handles only basic requests like serving static files, not business logic).
 
-The application server queries the database server for the product details using SQL (e.g., “SELECT * FROM products WHERE id = 123”).
-Once the application server gets the data from the database, it might:
-Apply business rules, like calculating discounts or checking stock availability.
-Format the data: For example, converting prices into the correct currency or applying discount percentages.
-It then prepares a response with the formatted data.
-Database Server:
+3. **Application Server:**
+   * The application server queries the database server for the product details using SQL (e.g., “SELECT * FROM products WHERE id = 123”).
+   * Once the application server gets the data from the database, it might:
+      * Apply business rules, like calculating discounts or checking stock availability.
+      * Format the data: For example, converting prices into the correct currency or applying discount percentages.
+      * It then prepares a response with the formatted data.
 
-The database server holds the actual data and performs read and write operations as requested by the application server.
-In the example, it would run the SQL query and return the product details to the application server.
-Sending Response Back:
+4. **Database Server:** 
+* The database server holds the actual data and performs read and write operations as requested by the application server.
+* In the example, it would run the SQL query and return the product details to the application server.
 
-The application server sends the final response (product details with any calculations applied) to the web server, which then delivers it to the user’s browser.
+5. **Sending Response Back:** The application server sends the final response (product details with any calculations applied) to the web server, which then delivers it to the user’s browser.
 
 
 
@@ -67,17 +68,64 @@ The application server sends the final response (product details with any calcul
   * They have high-speed network connections to handle huge amounts of data.
 
 ### 2.1 Why do we need Physical servers?
- * **To "rent computing power"** :
+* **To "rent computing power"** :
    * Small businesses are essentially renting access to **physical servers (and sometimes virtual ones)**.
    * Owned and managed by cloud providers like AWS, Microsoft Azure, or Google Cloud.
+* **ON-Premise servers** were costly as maintaining them was tedious job.
 
 ### 2.2 Virtualization:
 * Cloud providers use virtualization to divide one ***physical server*** into ***multiple virtual servers*** (called Virtual Machines or VMs). 
 * Each VM acts as if it’s a separate machine, with its own *operating system* and resources.
 
-### 2.3 What are physical servers in the cloud:
-* At the core, cloud providers have massive **Data centers**. 
-* Each Data center consist of thousands of *Physical servers*.
+#### 2.2.1 The Role of the Hypervisor
+***A hypervisor allows a single physical server to be virtualized.***
+
+The hypervisor acts as a middleman between the hardware and the operating systems.
+It divides the physical server's resources (CPU, RAM, storage) into multiple virtual environments.
+Each virtual environment runs its own operating system, behaving as if it were a separate physical server.
+Two Types of Hypervisors:
+Type 1 Hypervisor (Bare-Metal):
+
+Runs directly on the hardware.
+Examples: VMware ESXi, Microsoft Hyper-V, KVM (Linux Kernel-based Virtual Machine).
+Use Case: Data centers hosting large-scale cloud services.
+Type 2 Hypervisor (Hosted):
+
+Runs on top of an existing operating system.
+Examples: VirtualBox, VMware Workstation.
+Use Case: Developers running multiple test environments on a personal machine.
+The Role of Virtual Machines (VMs)
+Each VM created by the hypervisor acts like an independent server:
+
+VM = Virtual Hardware + Operating System + Software Stack
+Each VM can run:
+Its own OS (Linux, Windows, etc.).
+Any combination of server software (web servers, database servers, etc.).
+Applications specific to a workload.
+This enables a single physical server to host multiple independent server software stacks simultaneously.
+
+How VMs Fit into the Stack:
+Here’s how the stack looks when you include hypervisors and VMs:
+
+Hardware:
+Physical CPU, RAM, storage, and networking resources.
+
+Hypervisor:
+Divides the hardware resources and creates multiple VMs.
+
+Virtual Machines (VMs):
+Each VM includes:
+
+Virtualized hardware: CPU, RAM, etc., allocated by the hypervisor.
+Operating System: A separate OS for each VM.
+Server Software: Web servers, database servers, application servers.
+Applications: The actual programs serving requests.
+
+
+
+
+
+
 
 ## Stack of Physical Server:
            -------------------
