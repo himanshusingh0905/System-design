@@ -55,10 +55,17 @@ Client ----------> Server
 
  ---------------------------------------------------------------------------------------------------------------------------------------
 
-# Important:
-## SERVER is more generalized word than just about serving webpages, storing data, running applications and all, As currently many cloud providers, provide compute, storage, networking etc.. this is
-also a kind of serving the requests like (give me 500GB of storage,etc..)
+# PHYSICAL SERVERS IN THE CLOUD : 
+* At the core, cloud providers have massive data centers filled with *thousands of physical servers*. 
+* These servers are super powerful and are maintained in a controlled environment:
+  * They are kept cool to prevent overheating.
+  * They are backed up with multiple power sources for reliability.
+  * They have high-speed network connections to handle huge amounts of data.
 
+
+# Virtualization:
+* Cloud providers use virtualization to divide one ***physical server*** into ***multiple virtual servers*** (called Virtual Machines or VMs). 
+* Each VM acts as if it’s a separate machine, with its own *operating system* and resources.
 
 # What are physical servers in the cloud:
 * At the core, cloud providers have massive **Data centers**. 
@@ -75,3 +82,13 @@ Let's understand the stack of server:
             Operating system
            -------------------
                Hardware    : CPU, RAM, STORAGE, NETWORKING-CARDS
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------
+
