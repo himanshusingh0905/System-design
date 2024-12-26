@@ -80,14 +80,15 @@ The application server sends the final response (product details with any calcul
 * Each Data center consist of thousands of *Physical servers*.
 
 ## Stack of Physical Server:
-           
-             Applications
            -------------------
-            sever-softwares : web-servers (Nginx, Apache), Database-servers(Mysql, Postgresql,etc), Application sever: Django, Node.js
+           |  Applications   |
            -------------------
-            Operating system
+           | sever-softwares | -> web-servers (Nginx, Apache), Database-servers(Mysql, Postgresql,etc), Application sever: Django, Node.js
            -------------------
-               Hardware    : CPU, RAM, STORAGE, NETWORKING-CARDS
+           |        OS       |
+           -------------------
+           |     Hardware    | -> CPU, RAM, STORAGE, NETWORKING-CARDS
+           -------------------
 
 
 
