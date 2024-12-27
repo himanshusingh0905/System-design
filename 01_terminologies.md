@@ -56,8 +56,6 @@
 
 
 
-
-
  ---------------------------------------------------------------------------------------------------------------------------------------
 
 ## 2. PHYSICAL SERVERS IN THE CLOUD : 
@@ -128,7 +126,7 @@
 Here’s how the stack looks when you include hypervisors and VMs:
 
          ----------------------------------
-         | Hardware: or [Physical Server] |   -> Physical CPU, RAM, storage, and networking resources.
+         |          Hardware              |   -> Physical CPU, RAM, storage, and networking resources.
          ----------------------------------
                        |
          ----------------------------------
@@ -152,16 +150,18 @@ Here’s how the stack looks when you include hypervisors and VMs:
 
 
 
-
-
-
-
-
-
-
-
-
-
 -----------------------------------------------------------------------------
 
-3
+# Relation between Physical server(In cloud) and server-softwares (Like web-servers, application-servers, database-server) : 
+
+**Physical servers:**
+* Hardware
+* A computer you can say, as having cpu, Ram, storage, networking cards, OS, etc
+* Provides a computing power
+* Situated at data-centers
+
+**Server-softwares:**
+* It's a program or software.
+* on the basis of type of request it receives, it gives responses (e.g. web-server, application-server, database-server).
+* Uses computing power of physical servers, to run the software and handle requests.
+* It's code is written in any server-side-scripting language..
