@@ -71,19 +71,31 @@
 * **To "rent computing power"** :
    * Small businesses are essentially renting access to **physical servers (and sometimes virtual ones)**.
    * Owned and managed by cloud providers like AWS, Microsoft Azure, or Google Cloud.
-* **ON-Premise servers** were costly as maintaining them was tedious job.
+* **ON-Premise servers** were costly as maintaining them was a tedious job.
+
+
+### 2.2 Stack of Physical Server:
+           -------------------
+           |  Applications   |
+           -------------------
+           | sever-softwares | -> web-servers (Nginx, Apache), Database-servers(Mysql, Postgresql,etc), Application sever: Django, Node.js
+           -------------------
+           |        OS       |
+           -------------------
+           |     Hardware    | -> CPU, RAM, STORAGE, NETWORKING-CARDS
+           -------------------
 
 --
-### 2.2 Virtualization:
+### 2.3 Virtualization:
 * Cloud providers use virtualization to divide one ***physical server*** into ***multiple virtual servers*** (called Virtual Machines or VMs). 
 * Each VM acts as if it’s a separate machine, with its own *operating system* and resources.
 
-#### 2.2.1 The Role of the Hypervisor
+#### 2.3.1 The Role of the Hypervisor
 ***A hypervisor allows a single physical server to be virtualized.***
 * The hypervisor acts as a middleman between the hardware and the operating systems.
 * It divides the physical server's resources (CPU, RAM, storage) into multiple virtual environments.
 * Each virtual environment runs its own operating system, behaving as if it were a separate physical server.
-* Two Types of Hypervisors:
+* ##### Two Types of Hypervisors:
   1. **Bare-Metal Hypervisor**:
      * Runs directly on the hardware.
      * Examples: VMware ESXi, Microsoft Hyper-V, KVM (Linux Kernel-based Virtual Machine).
@@ -94,7 +106,7 @@
      * Examples: VirtualBox, VMware Workstation.
      * Use Case: Developers running multiple test environments on a personal machine.
 
-#### 2.2.2 The Role of Virtual Machines (VMs)
+#### 2.3.2 The Role of Virtual Machines (VMs)
 ##### NOTE : Each VM created by the hypervisor acts like an independent server.
 ##### VM = *Virtual Hardware* + Operating System + Software Stack
 * Each VM can run:
@@ -104,7 +116,7 @@
 
 
 * **This enables a single physical server to host multiple independent server software stacks simultaneously.**
-#### 2.2.3 How VMs Fit into the Stack:
+#### 2.3.3 How VMs Fit into the Stack:
 Here’s how the stack looks when you include hypervisors and VMs:
 
          ----------------------------------
@@ -136,18 +148,6 @@ Here’s how the stack looks when you include hypervisors and VMs:
 
 
 
-## Stack of Physical Server:
-           -------------------
-           |  Applications   |
-           -------------------
-           | sever-softwares | -> web-servers (Nginx, Apache), Database-servers(Mysql, Postgresql,etc), Application sever: Django, Node.js
-           -------------------
-           |        OS       |
-           -------------------
-           |     Hardware    | -> CPU, RAM, STORAGE, NETWORKING-CARDS
-           -------------------
-
-
 
 
 
@@ -156,3 +156,4 @@ Here’s how the stack looks when you include hypervisors and VMs:
 
 -----------------------------------------------------------------------------
 
+3
