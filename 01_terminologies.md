@@ -73,30 +73,29 @@
    * Owned and managed by cloud providers like AWS, Microsoft Azure, or Google Cloud.
 * **ON-Premise servers** were costly as maintaining them was tedious job.
 
+--
 ### 2.2 Virtualization:
 * Cloud providers use virtualization to divide one ***physical server*** into ***multiple virtual servers*** (called Virtual Machines or VMs). 
 * Each VM acts as if it’s a separate machine, with its own *operating system* and resources.
 
 #### 2.2.1 The Role of the Hypervisor
 ***A hypervisor allows a single physical server to be virtualized.***
+* The hypervisor acts as a middleman between the hardware and the operating systems.
+* It divides the physical server's resources (CPU, RAM, storage) into multiple virtual environments.
+* Each virtual environment runs its own operating system, behaving as if it were a separate physical server.
+* Two Types of Hypervisors:
+  1. **Bare-Metal**:
+     * Runs directly on the hardware.
+     * Examples: VMware ESXi, Microsoft Hyper-V, KVM (Linux Kernel-based Virtual Machine).
+     * Use Case: Data centers hosting large-scale cloud services.
 
-The hypervisor acts as a middleman between the hardware and the operating systems.
-It divides the physical server's resources (CPU, RAM, storage) into multiple virtual environments.
-Each virtual environment runs its own operating system, behaving as if it were a separate physical server.
-Two Types of Hypervisors:
-Type 1 Hypervisor (Bare-Metal):
+  2. **Hosted Hypervisor**:
+     * Runs on top of an existing operating system.
+     * Examples: VirtualBox, VMware Workstation.
+     * Use Case: Developers running multiple test environments on a personal machine.
 
-Runs directly on the hardware.
-Examples: VMware ESXi, Microsoft Hyper-V, KVM (Linux Kernel-based Virtual Machine).
-Use Case: Data centers hosting large-scale cloud services.
-Type 2 Hypervisor (Hosted):
-
-Runs on top of an existing operating system.
-Examples: VirtualBox, VMware Workstation.
-Use Case: Developers running multiple test environments on a personal machine.
-The Role of Virtual Machines (VMs)
-Each VM created by the hypervisor acts like an independent server:
-
+#### 2.2.2 The Role of Virtual Machines (VMs)
+##### NOTE : Each VM created by the hypervisor acts like an independent server.
 VM = Virtual Hardware + Operating System + Software Stack
 Each VM can run:
 Its own OS (Linux, Windows, etc.).
