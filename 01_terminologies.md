@@ -84,7 +84,7 @@
 * It divides the physical server's resources (CPU, RAM, storage) into multiple virtual environments.
 * Each virtual environment runs its own operating system, behaving as if it were a separate physical server.
 * Two Types of Hypervisors:
-  1. **Bare-Metal**:
+  1. **Bare-Metal Hypervisor**:
      * Runs directly on the hardware.
      * Examples: VMware ESXi, Microsoft Hyper-V, KVM (Linux Kernel-based Virtual Machine).
      * Use Case: Data centers hosting large-scale cloud services.
@@ -96,29 +96,39 @@
 
 #### 2.2.2 The Role of Virtual Machines (VMs)
 ##### NOTE : Each VM created by the hypervisor acts like an independent server.
-VM = Virtual Hardware + Operating System + Software Stack
-Each VM can run:
-Its own OS (Linux, Windows, etc.).
-Any combination of server software (web servers, database servers, etc.).
-Applications specific to a workload.
-This enables a single physical server to host multiple independent server software stacks simultaneously.
+##### VM = *Virtual Hardware* + Operating System + Software Stack
+* Each VM can run:
+    * Its own OS (Linux, Windows, etc.).
+    * Any combination of server software (web servers, database servers, etc.).
+    * Applications specific to a workload.
 
-How VMs Fit into the Stack:
+
+* **This enables a single physical server to host multiple independent server software stacks simultaneously.**
+#### 2.2.3 How VMs Fit into the Stack:
 Here’s how the stack looks when you include hypervisors and VMs:
 
-Hardware:
-Physical CPU, RAM, storage, and networking resources.
-
-Hypervisor:
-Divides the hardware resources and creates multiple VMs.
-
-Virtual Machines (VMs):
-Each VM includes:
-
-Virtualized hardware: CPU, RAM, etc., allocated by the hypervisor.
-Operating System: A separate OS for each VM.
-Server Software: Web servers, database servers, application servers.
-Applications: The actual programs serving requests.
+         ----------------------------------
+         | Hardware: or [Physical Server] |   -> Physical CPU, RAM, storage, and networking resources.
+         ----------------------------------
+                       |
+         ----------------------------------
+         |        Hypervisor:             |   ->  Divides the hardware resources and creates multiple VMs.
+         ----------------------------------    
+                       |
+         ----------------------------------
+         |     Virtual Machines (VMs):    |   ->  Each VM act as separate computer
+         ---------------------------------- 
+                       |
+         Each VM includes : 
+                 ------------------------
+                 | Virtualized hardware |    ->  CPU, RAM, etc., allocated by the hypervisor.
+                 ------------------------
+                 | Operating System:    |    ->  A separate OS for each VM.
+                 ------------------------
+                 | Server Software:     |    ->  Web servers, database servers, application servers.
+                 ------------------------
+                 |   Applications       |    -> The actual programs serving requests.
+                 ------------------------
 
 
 
