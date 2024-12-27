@@ -97,10 +97,10 @@
 * The hypervisor allocates resources like CPU, RAM, and disk space to each VM.
    * Each VM gets its own slice of the server’s resources.
    * Resources are isolated so one VM doesn’t interfere with another.
-   * **Example:**A server with 16 CPUs and 64 GB of RAM can be partitioned into:   
-                1. VM1: 4 CPUs, 16 GB RAM.
-                2. VM2: 8 CPUs, 32 GB RAM.
-                3. VM3: 4 CPUs, 16 GB RAM.
+   * **Example:** A server with 16 CPUs and 64 GB of RAM can be partitioned into:   
+                1. VM1: 4 CPUs, 16 GB RAM.   
+                2. VM2: 8 CPUs, 32 GB RAM.   
+                3. VM3: 4 CPUs, 16 GB RAM.   
 * Each virtual environment runs its own operating system, behaving as if it were a separate physical server.
 
 * ##### Two Types of Hypervisors:
