@@ -94,7 +94,15 @@
 ***A hypervisor allows a single physical server to be virtualized.***
 * The hypervisor acts as a middleman between the hardware and the operating systems.
 * It divides the physical server's resources (CPU, RAM, storage) into multiple virtual environments.
+* The hypervisor allocates resources like CPU, RAM, and disk space to each VM.
+   * Each VM gets its own slice of the server’s resources.
+   * Resources are isolated so one VM doesn’t interfere with another.
+   * **Example:**A server with 16 CPUs and 64 GB of RAM can be partitioned into:
+                1. VM1: 4 CPUs, 16 GB RAM.
+                2. VM2: 8 CPUs, 32 GB RAM.
+                3. VM3: 4 CPUs, 16 GB RAM.
 * Each virtual environment runs its own operating system, behaving as if it were a separate physical server.
+
 * ##### Two Types of Hypervisors:
   1. **Bare-Metal Hypervisor**:
      * Runs directly on the hardware.
@@ -107,8 +115,8 @@
      * Use Case: Developers running multiple test environments on a personal machine.
 
 #### 2.3.2 The Role of Virtual Machines (VMs)
-##### NOTE : Each VM created by the hypervisor acts like an independent server.
-##### VM = *Virtual Hardware* + Operating System + Software Stack
+*  **NOTE : Each VM created by the hypervisor acts like an independent server.**
+* **VM = *Virtual Hardware* + Operating System + Software Stack.**
 * Each VM can run:
     * Its own OS (Linux, Windows, etc.).
     * Any combination of server software (web servers, database servers, etc.).
